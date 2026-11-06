@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>韩剧官网tv-韩剧官网tv在线观看_韩剧官网tv最新韩剧推荐</title>
+<meta name="description" content="韩剧官网tv为您提供韩剧在线观看入口、热门韩剧推荐与追剧指南，汇总最新韩剧资讯和经典剧集片单，帮你快速找到想看的韩剧内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e8365d'/%3E%3Cpath d='M26 20l18 12-18 12z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --rose:#e8365d;
+    --rose-deep:#b81f43;
+    --ink:#1c1a22;
+    --ink-soft:#4b4757;
+    --mute:#7a7487;
+    --line:#ece7ef;
+    --bg:#fdfbfc;
+    --card:#ffffff;
+    --cream:#f7f1f4;
+    --gold:#c9963f;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.75;
+    font-size:16px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px;}
+
+  /* header */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(253,251,252,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.2px;color:var(--ink);white-space:nowrap;}
+  .logo .mark{
+    width:34px;height:34px;border-radius:10px;flex:0 0 auto;
+    background:linear-gradient(140deg,var(--rose),var(--rose-deep));
+    display:grid;place-items:center;
+    box-shadow:0 6px 14px rgba(232,54,93,.28);
+  }
+  nav.main{display:flex;align-items:center;gap:22px;font-size:15px;color:var(--ink-soft);}
+  nav.main a{padding:4px 0;position:relative;}
+  nav.main a:hover{color:var(--rose-deep);}
+  nav.main a::after{
+    content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;
+    background:var(--rose);transition:width .2s ease;border-radius:2px;
+  }
+  nav.main a:hover::after{width:100%;}
+  .nav-cta{
+    background:var(--rose);color:#fff !important;font-weight:600;
+    padding:9px 18px;border-radius:999px;font-size:14.5px;
+    box-shadow:0 8px 18px rgba(232,54,93,.25);
+    white-space:nowrap;
+  }
+  .nav-cta::after{display:none;}
+  .nav-cta:hover{background:var(--rose-deep);color:#fff !important;}
+
+  /* hero */
+  .hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(900px 420px at 88% -12%, #ffe3ea 0%, rgba(255,227,234,0) 62%),
+      linear-gradient(180deg,#fff 0%, var(--cream) 100%);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-inner{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;
+    padding:58px 0 62px;
+  }
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:700;color:var(--rose-deep);
+    background:#fde7ed;border:1px solid #f8cdd9;
+    padding:5px 13px;border-radius:999px;letter-spacing:.4px;
+  }
+  h1{
+    font-size:clamp(30px,4.6vw,46px);
+    line-height:1.22;margin:18px 0 14px;
+    font-weight:800;letter-spacing:-.5px;
+  }
+  h1 em{font-style:normal;color:var(--rose);}
+  .lede{font-size:16.5px;color:var(--ink-soft);max-width:36em;margin:0 0 24px;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:15px;font-weight:600;padding:12px 22px;border-radius:999px;
+    transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
+  }
+  .btn-primary{background:var(--rose);color:#fff;box-shadow:0 10px 22px rgba(232,54,93,.26);}
+  .btn-primary:hover{background:var(--rose-deep);transform:translateY(-1px);}
+  .btn-ghost{background:#fff;color:var(--ink);border:1px solid #e2dbe6;}
+  .btn-ghost:hover{border-color:var(--rose);color:var(--rose-deep);}
+  .btn[aria-disabled="true"]{opacity:.65;cursor:not-allowed;pointer-events:none;}
+
+  .hero-visual{
+    position:relative;border-radius:22px;overflow:hidden;
+    background:#231f2b;aspect-ratio:4/3.35;
+    box-shadow:0 26px 50px -22px rgba(60,30,50,.4);
+    display:grid;place-items:center;
+  }
+  .hero-visual svg{width:100%;height:100%;}
+  .float-card{
+    position:absolute;left:16px;bottom:16px;right:16px;
+    background:rgba(255,255,255,.94);
+    border-radius:14px;padding:11px 14px;
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    font-size:13.5px;color:var(--ink-soft);
+    box-shadow:0 10px 24px rgba(40,20,35,.18);
+  }
+  .float-card b{color:var(--ink);font-weight:700;}
+  .live-dot{width:8px;height:8px;border-radius:50%;background:var(--rose);display:inline-block;margin-right:6px;}
+
+  /* section common */
+  section{padding:56px 0;}
+  .sec-head{margin-bottom:26px;}
+  .sec-head h2{
+    font-size:24px;margin:0 0 8px;font-weight:800;letter-spacing:-.3px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .sec-head h2::before{
+    content:"";width:5px;height:20px;border-radius:3px;
+    background:linear-gradient(180deg,var(--rose),var(--rose-deep));
+  }
+  .sec-head p{margin:0;color:var(--mute);font-size:14.5px;}
+
+  /* picks grid */
+  .grid-picks{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .pick{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;display:flex;flex-direction:column;
+    transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+  }
+  .pick:hover{transform:translateY(-3px);box-shadow:0 18px 34px -20px rgba(80,40,70,.4);border-color:#f3d6df;}
+  .pick .cover{aspect-ratio:16/9;position:relative;background:#f3edf1;}
+  .pick .cover svg{width:100%;height:100%;}
+  .tag{
+    position:absolute;top:10px;left:10px;
+    font-size:12px;font-weight:700;color:#fff;
+    background:rgba(28,26,34,.72);padding:3px 9px;border-radius:6px;
+    backdrop-filter:blur(4px);
+  }
+  .pick .body{padding:16px 17px 18px;display:flex;flex-direction:column;gap:7px;flex:1;}
+  .pick h3{margin:0;font-size:16.5px;font-weight:700;}
+  .pick p{margin:0;font-size:14px;color:var(--ink-soft);}
+  .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:6px;}
+  .meta span{font-size:12.5px;color:var(--mute);background:#f7f2f5;border-radius:6px;padding:2px 8px;}
+
+  /* list section */
+  .two-col{display:grid;grid-template-columns:1.35fr .85fr;gap:26px;align-items:start;}
+  .panel{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 24px;
+  }
+  .panel h3{margin:0 0 4px;font-size:18px;font-weight:800;}
+  .panel .sub{margin:0 0 16px;font-size:13.5px;color:var(--mute);}
+  ul.drama-list{list-style:none;margin:0;padding:0;}
+  ul.drama-list li{
+    display:flex;gap:14px;align-items:flex-start;
+    padding:14px 0;border-top:1px dashed var(--line);
+  }
+  ul.drama-list li:first-child{border-top:0;padding-top:2px;}
+  .num{
+    flex:0 0 auto;width:28px;height:28px;border-radius:9px;
+    display:grid;place-items:center;font-size:13px;font-weight:800;
+    background:#fde7ed;color:var(--rose-deep);
+  }
+  .num.top{background:linear-gradient(140deg,var(--rose),var(--rose-deep));color:#fff;}
+  ul.drama-list .txt{flex:1;min-width:0;}
+  ul.drama-list b{display:block;font-size:15.5px;font-weight:700;}
+  ul.drama-list small{color:var(--ink-soft);font-size:13.5px;display:block;margin-top:2px;}
+
+  .side-note{background:linear-gradient(160deg,#fff 0%,#fdf1f5 100%);}
+  .side-note h3{margin:0 0 10px;font-size:17px;font-weight:800;}
+  .side-note p{margin:0 0 14px;font-size:14.5px;color:var(--ink-soft);}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+  .chip{
+    font-size:13px;color:var(--rose-deep);background:#fff;
+    border:1px solid #f6cfda;border-radius:999px;padding:5px 12px;
+  }
+  .mini-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--rose-deep);}
+  .mini-link:hover{color:var(--ink);}
+
+  /* guide blocks */
+  .guide{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;
+  }
+  .card .ic{
+    width:40px;height:40px;border-radius:12px;display:grid;place-items:center;
+    background:#fde7ed;margin-bottom:14px;
+  }
+  .card h3{margin:0 0 8px;font-size:17px;font-weight:800;}
+  .card p{margin:0;font-size:14.5px;color:var(--ink-soft);}
+
+  /* faq */
+  .faq-item{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:16px 20px;margin-bottom:12px;
+  }
+  .faq-item h3{margin:0 0 6px;font-size:15.5px;font-weight:700;color:var(--ink);}
+  .faq-item p{margin:0;font-size:14.5px;color:var(--ink-soft);}
+
+  /* footer */
+  footer.site{
+    background:#1c1a22;color:#c9c4d2;
+    padding:44px 0 30px;margin-top:10px;
+  }
+  .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.1);}
+  .foot-brand .logo{color:#fff;}
+  .foot-brand p{margin:12px 0 0;font-size:14px;color:#a29cb0;max-width:32em;}
+  .foot-links{display:flex;gap:48px;flex-wrap:wrap;}
+  .foot-links h4{margin:0 0 10px;font-size:14px;color:#fff;font-weight:700;}
+  .foot-links a{display:block;font-size:13.5px;color:#a29cb0;padding:3px 0;}
+  .foot-links a:hover{color:#ff8ba6;}
+  .foot-bot{padding-top:20px;font-size:13px;color:#8a8497;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;}
+
+  @media (max-width:920px){
+    .hero-inner{grid-template-columns:1fr;gap:30px;padding:40px 0 46px;}
+    .hero-visual{max-width:460px;aspect-ratio:16/11;}
+    .grid-picks{grid-template-columns:repeat(2,1fr);}
+    .two-col{grid-template-columns:1fr;}
+    .guide{grid-template-columns:1fr;}
+  }
+  @media (max-width:720px){
+    nav.main{display:none;}
+    .bar{height:60px;}
+    .logo{font-size:17px;}
+    .logo .mark{width:30px;height:30px;}
+    section{padding:40px 0;}
+    .grid-picks{grid-template-columns:1fr;}
+    .panel{padding:18px;}
+    .foot-links{gap:32px;}
+    body{font-size:15.5px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="韩剧官网tv 首页">
+      <span class="mark" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 5l11 7-11 7V5z" fill="#fff"/></svg>
+      </span>
+      韩剧官网tv
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#picks">热门剧集</a>
+      <a href="#ranking">追剧榜单</a>
+      <a href="#guide">观看入口</a>
+      <a href="#faq">常见问题</a>
+      <a class="nav-cta" href="#picks">开始追剧</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-labelledby="hero-h1">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="kicker">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.4l6.1-.8L12 3z" fill="#b81f43"/></svg>
+          韩剧片单 · 每周更新
+        </span>
+        <h1 id="hero-h1">韩剧官网tv</h1>
+        <p class="lede">韩剧官网tv把分散在各处的韩剧内容收拢到一页：按题材找剧、按口碑排序、按更新节奏追更。无论是刚入坑的新观众，还是已经追剧多年的老剧迷，都能在这里快速锁定下一部要看的作品。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#picks">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M8 5l11 7-11 7V5z" fill="#fff"/></svg>
+            浏览热门剧集
+          </a>
+          <a class="btn btn-ghost" href="#ranking">查看追剧榜单</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" role="img" aria-label="韩剧官网tv 剧集卡片示意">
+        <svg viewBox="0 0 400 335" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#3a2e44"/><stop offset="1" stop-color="#231f2b"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ff7a97"/><stop offset="1" stop-color="#e8365d"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="335" fill="url(#g1)"/>
+          <circle cx="320" cy="60" r="90" fill="#e8365d" opacity=".14"/>
+          <circle cx="70" cy="270" r="110" fill="#c9963f" opacity=".10"/>
+          <rect x="40" y="52" width="150" height="196" rx="12" fill="#2f2939" stroke="#4b4256"/>
+          <rect x="40" y="52" width="150" height="112" rx="12" fill="url(#g2)" opacity=".85"/>
+          <path d="M100 96l24 16-24 16V96z" fill="#fff"/>
+          <rect x="54" y="176" width="90" height="9" rx="4.5" fill="#8d8399"/>
+          <rect x="54" y="194" width="120" height="7" rx="3.5" fill="#5e556c"/>
+          <rect x="54" y="208" width="72" height="7" rx="3.5" fill="#5e556c"/>
+          <rect x="206" y="92" width="150" height="196" rx="12" fill="#2f2939" stroke="#4b4256"/>
+          <rect x="206" y="92" width="150" height="100" rx="12" fill="#4b4256"/>
+          <circle cx="281" cy="142" r="22" fill="#e8365d" opacity=".8"/>
+          <rect x="220" y="206" width="86" height="9" rx="4.5" fill="#8d8399"/>
+          <rect x="220" y="224" width="122" height="7" rx="3.5" fill="#5e556c"/>
+          <rect x="220" y="238" width="64" height="7" rx="3.5" fill="#5e556c"/>
+          <rect x="40" y="264" width="316" height="40" rx="10" fill="#fff" opacity=".08"/>
+          <circle cx="62" cy="284" r="5" fill="#e8365d"/>
+          <rect x="78" y="278" width="80" height="7" rx="3.5" fill="#8d8399"/>
+          <rect x="240" y="278" width="100" height="7" rx="3.5" fill="#8d8399"/>
+        </svg>
+        <div class="float-card">
+          <span><span class="live-dot"></span><b>今日更新</b> · 新剧速递</span>
+          <span>4 部</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="picks">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>本周值得一看的韩剧</h2>
+        <p>从爱情、悬疑到职场与家庭，按题材挑出近期讨论度较高的作品，点开即可进入对应主题页。</p>
+      </div>
+      <div class="grid-picks">
+
+        <article class="pick">
+          <div class="cover">
+            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs><linearGradient id="c1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff9ab0"/><stop offset="1" stop-color="#e8365d"/></linearGradient></defs>
+              <rect width="320" height="180" fill="url(#c1)"/>
+              <circle cx="250" cy="46" r="46" fill="#fff" opacity=".18"/>
+              <path d="M148 76l30 20-30 20V76z" fill="#fff" opacity=".92"/>
+              <rect x="26" y="132" width="70" height="8" rx="4" fill="#fff" opacity=".7"/>
+              <rect x="26" y="148" width="120" height="7" rx="3.5" fill="#fff" opacity=".45"/>
+            </svg>
+            <span class="tag">爱情</span>
+          </div>
+          <div class="body">
+            <h3>甜度与拉扯并存的恋爱剧</h3>
+            <p>适合喜欢轻快节奏与高密度情感场的观众，人物关系推进快，台词密集，适合一次连看数集。</p>
+            <div class="meta"><span>16 集</span><span>周末档</span><span>已完结</span></div>
+          </div>
+        </article>
+
+        <article class="pick">
+          <div class="cover">
+            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs><linearGradient id="c2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4b4256"/><stop offset="1" stop-color="#231f2b"/></linearGradient></defs>
+              <rect width="320" height="180" fill="url(#c2)"/>
+              <circle cx="80" cy="50" r="40" fill="#c9963f" opacity=".28"/>
+              <path d="M150 78l28 18-28 18V78z" fill="#ff8ba6" opacity=".9"/>
+              <rect x="26" y="132" width="66" height="8" rx="4" fill="#fff" opacity=".55"/>
+              <rect x="26" y="148" width="112" height="7" rx="3.5" fill="#fff" opacity=".32"/>
+            </svg>
+            <span class="tag">悬疑</span>
+          </div>
+          <div class="body">
+            <h3>反转不断的犯罪推理剧</h3>
+            <p>线索层层递进，适合喜欢边看边推理的观众。建议按播出顺序观看，避免提前剧透关键人物身份。</p>
+            <div class="meta"><span>12 集</span><span>悬疑线</span><span>更新中</span></div>
+          </div>
+        </article>
+
+        <article class="pick">
+          <div class="cover">
+            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs><linearGradient id="c3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7e3c9"/><stop offset="1" stop-color="#c9963f"/></linearGradient></defs>
+              <rect width="320" height="180" fill="url(#c3)"/>
+              <circle cx="260" cy="130" r="54" fill="#fff" opacity=".24"/>
+              <path d="M150 76l30 20-30 20V76z" fill="#fff" opacity=".92"/>
+              <rect x="26" y="132" width="72" height="8" rx="4" fill="#fff" opacity=".78"/>
+              <rect x="26" y="148" width="116" height="7" rx="3.5" fill="#fff" opacity=".5"/>
+            </svg>
+            <span class="tag">职场</span>
+          </div>
+          <div class="body">
+            <h3>写实风格的职场群像剧</h3>
+            <p>聚焦公司内部的协作与博弈，节奏偏稳，适合喜欢人物成长线和日常细节的观众慢慢品味。</p>
+            <div class="meta"><span>16 集</span><span>群像</span><span>已完结</span></div>
+          </div>
+        </article>
+
+        <article class="pick">
+          <div class="cover">
+            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs><linearGradient id="c4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9ec9c2"/><stop offset="1" stop-color="#3f7d74"/></linearGradient></defs>
+              <rect width="320" height="180" fill="url(#c4)"/>
+              <circle cx="70" cy="130" r="46" fill="#fff" opacity=".18"/>
+              <path d="M148 76l30 20-30 20V76z" fill="#fff" opacity=".9"/>
+              <rect x="26" y="132" width="68" height="8" rx="4" fill="#fff" opacity=".72"/>
+              <rect x="26" y="148" width="108" height="7" rx="3.5" fill="#fff" opacity=".46"/>
+            </svg>
+            <span class="tag">家庭</span>
+          </div>
+          <div class="body">
+            <h3>温情治愈的家庭日常剧</h3>
+            <p>以家庭关系为主线，节奏舒缓，适合下班后放松观看。几代人的相处细节是这部剧的主要看点。</p>
+            <div class="meta"><span>20 集</span><span>长剧</span><span>已完结</span></div>
+          </div>
+        </article>
+
+        <article class="pick">
+          <div class="cover">
+            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs><linearGradient id="c5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8f7bd6"/><stop offset="1" stop-color="#4b3b8f"/></linearGradient></defs>
+              <rect width="320" height="180" fill="url(#c5)"/>
+              <circle cx="256" cy="44" r="42" fill="#fff" opacity=".16"/>
+              <path d="M150 76l30 20-30 20V76z" fill="#fff" opacity=".9"/>
+              <rect x="26" y="132" width="70" height="8" rx="4" fill="#fff" opacity=".7"/>
+              <rect x="26" y="148" width="114" height="7" rx="3.5" fill="#fff" opacity=".44"/>
+            </svg>
+            <span class="tag">奇幻</span>
+          </div>
+          <div class="body">
+            <h3>设定新颖的奇幻爱情剧</h3>
+            <p>世界观设定是最大亮点，前两集信息量较大，建议留心细节，后续剧情会围绕这些设定展开。</p>
+            <div class="meta"><span>14 集</span><span>奇幻线</span><span>更新中</span></div>
+          </div>
+        </article>
+
+        <article class="pick">
+          <div class="cover">
+            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs><linearGradient id="c6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f2a65a"/><stop offset="1" stop-color="#d2582f"/></linearGradient></defs>
+              <rect width="320" height="180" fill="url(#c6)"/>
+              <circle cx="70" cy="52" r="40" fill="#fff" opacity=".18"/>
+              <path d="M148 76l30 20-30 20V76z" fill="#fff" opacity=".9"/>
+              <rect x="26" y="132" width="66" height="8" rx="4" fill="#fff" opacity=".74"/>
+              <rect x="26" y="148" width="110" height="7" rx="3.5" fill="#fff" opacity=".46"/>
+            </svg>
+            <span class="tag">喜剧</span>
+          </div>
+          <div class="body">
+            <h3>轻松解压的喜剧向韩剧</h3>
+            <p>节奏轻快，笑点密集，单集时长短，适合碎片时间观看。剧中配角线同样有看点，不必快进。</p>
+            <div class="meta"><span>12 集</span><span>轻喜剧</span><span>已完结</span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="ranking" style="background:linear-gradient(180deg,#fff 0%,var(--cream) 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>追剧榜单与观看顺序</h2>
+        <p>榜单按题材热度与讨论度排列，观看顺序建议从已完结作品入手，再跟进更新中的剧集。</p>
+      </div>
+      <div class="two-col">
+
+        <div class="panel">
+          <h3>韩剧官网tv 本周追剧榜</h3>
+          <p class="sub">收录近期观众点开次数较多的作品，编号仅表示榜单位置。</p>
+          <ul class="drama-list">
+            <li>
+              <span class="num top">1</span>
+              <div class="txt"><b>恋爱题材·周末档新剧</b><small>情感线推进快，适合连看；前四集是关系铺垫阶段。</small></div>
+            </li>
+            <li>
+              <span class="num top">2</span>
+              <div class="txt"><b>悬疑推理·更新中</b><small>每集结尾留悬念，建议一次看两集以上，避免断在关键处。</small></div>
+            </li>
+            <li>
+              <span class="num">3</span>
+              <div class="txt"><b>职场群像·已完结</b><small>人物多但关系清晰，第一集需要记住主要角色分工。</small></div>
+            </li>
+            <li>
+              <span class="num">4</span>
+              <div class="txt"><b>家庭治愈·长剧</b><small>适合慢慢看，单集独立性强，不按顺序也不影响理解。</small></div>
+            </li>
+            <li>
+              <span class="num">5</span>
+              <div class="txt"><b>奇幻爱情·更新中</b><small>设定信息集中在前两集，后续剧情围绕规则展开。</small></div>
+            </li>
+          </ul>
+        </div>
+
+        <aside class="panel side-note">
+          <h3>按心情挑剧</h3>
+          <p>不知道从哪部开始？可以先按当下想看的感觉筛一遍，再回到榜单确认观看顺序。</p>
+          <div class="chips">
+            <span class="chip">想被甜到</span>
+            <span class="chip">想动脑推理</span>
+            <span class="chip">想放松解压</span>
+            <span class="chip">想安静治愈</span>
+            <span class="chip">想看群像</span>
+            <span class="chip">想看奇幻设定</span>
+          </div>
+          <p>韩剧官网tv 的片单会随着新剧上线调整，同一部剧在不同阶段也可能出现在不同标签下。</p>
+          <a class="mini-link" href="#picks">
+            回到热门剧集
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>观看入口与使用路径</h2>
+        <p>韩剧官网tv 页面本身提供剧集信息与片单导航，实际播放请通过各剧对应的正规平台入口进入。</p>
+      </div>
+      <div class="guide">
+
+        <div class="card">
+          <div class="ic" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="#b81f43" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>先定题材，再定集数</h3>
+          <p>时间有限时优先选择 12 集左右的短剧，一集约一小时，两三周可以看完；长剧适合当作日常陪伴，不必赶进度。</p>
+        </div>
+
+        <div class="card">
+          <div class="ic" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="#b81f43" stroke-width="2"/><path d="M12 7.5V12l3 2" stroke="#b81f43" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>跟更新节奏追剧</h3>
+          <p>更新中的剧集通常每周固定几天播出，先看清更新安排再决定是否入坑，能减少等待带来的断档感。</p>
+        </div>
+
+        <div class="card">
+          <div class="ic" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 6.5L21 10l-5 4.5 1.5 6.5L12 17.5 6.5 21 8 14.5 3 10l6.5-.5L12 3z" stroke="#b81f43" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>参考口碑而非只看热度</h3>
+          <p>热度高的剧不一定合你的口味，可以先看前两集再决定是否继续，避免因为宣传声量大而浪费时间。</p>
+        </div>
+
+        <div class="card">
+          <div class="ic" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="14" rx="2.5" stroke="#b81f43" stroke-width="2"/><path d="M10 9.5l5 2.5-5 2.5v-5z" fill="#b81f43"/></svg>
+          </div>
+          <h3>收藏片单，随时回看</h3>
+          <p>把想看的剧记进自己的片单，按题材分组，下次打开页面时直接从待看列表里挑，不必重新翻找。</p>
+        </div>
+
+      </div>
+
+      <div style="margin-top:22px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+        <a class="btn btn-primary" href="#picks">挑选一部开始看</a>
+        <a class="btn btn-ghost" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="background:var(--cream);border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>常见问题</h2>
+        <p>关于韩剧官网tv 的内容范围与使用方式，这里集中回答几个高频疑问。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>韩剧官网tv 能直接播放剧集吗？</h3>
+        <p>页面以剧集信息、片单导航和观看顺序建议为主，实际播放请通过对应剧集的正规平台入口进入，不同作品的上线平台并不相同。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>片单多久更新一次？</h3>
+        <p>热门剧集与追剧榜单会随新剧上线和讨论度变化调整，更新中的作品在完结后也会重新归入已完结分类。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>第一次看韩剧，从哪部入手比较好？</h3>
+        <p>建议先从 12 集左右的轻喜剧或爱情剧开始，单集时长短、人物关系清晰，容易跟上节奏，再逐步尝试悬疑和长篇家庭剧。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>看不懂剧中的文化细节怎么办？</h3>
+        <p>可以先留意剧中反复出现的称谓、饮食和职场礼仪，这些细节往往与人物关系直接相关，看多了会自然熟悉。</p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="logo">
+          <span class="mark" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 5l11 7-11 7V5z" fill="#fff"/></svg>
+          </span>
+          韩剧官网tv
+        </span>
+        <p>韩剧官网tv 汇总热门剧集、追剧榜单与观看顺序建议，帮助观众按题材和节奏找到适合自己的韩剧。</p>
+      </div>
+      <div class="foot-links">
+        <div>
+          <h4>内容导航</h4>
+          <a href="#picks">热门剧集</a>
+          <a href="#ranking">追剧榜单</a>
+          <a href="#guide">观看入口</a>
+          <a href="#faq">常见问题</a>
+        </div>
+        <div>
+          <h4>题材分类</h4>
+          <a href="#picks">爱情题材</a>
+          <a href="#picks">悬疑推理</a>
+          <a href="#picks">职场群像</a>
+          <a href="#picks">家庭治愈</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 韩剧官网tv · 剧集信息与片单导航</span>
+      <span>内容以剧集公开信息为准，播放请通过正规平台</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+          </html>
